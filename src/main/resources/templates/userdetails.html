@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<title>My HealthCare App (DEMO)</title>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<link href="/css/main.css" rel="stylesheet" id="main-css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow static-top">
+	<div class="container">
+		<a class="navbar-brand" href="#">
+			<img src="image/health-care.png" alt="">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home
+						<span class="sr-only">(current)</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Medications</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Appointments</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<div class="container">
+	<h1 class="mt-4">Userinfo details</h1>
+	<p>Below is a list of items stored against a user for the requested scopes.</p>
+	<dl class="row">
+		<th:block th:each="userInfoAtt : ${userInfoMap}">
+			<dt class="col-sm-3" th:text='${userInfoAtt.key}'></dt>
+			<dd class="col-sm-9" th:text='${userInfoAtt.value}'></dd>
+		</th:block>
+	</dl>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+</html>
